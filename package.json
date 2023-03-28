@@ -1,0 +1,35 @@
+{
+  "name": "product-management-sample-apis",
+  "version": "1.0.0",
+  "main": "lib/scripts/start.js",
+  "scripts": {
+    "start": "env-cmd node lib/scripts/start.js",
+    "dev": "env-cmd nodemon src/scripts/start.ts",
+    "build": "tsc"
+  },
+  "author": {
+    "name": "Rajat Sharma",
+    "email": "rxx175@gmail.com",
+    "url": "https://github.com/rajatxs"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@rxpm/logger": "^2.0.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/node": "^18.15.10",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  }
+}
