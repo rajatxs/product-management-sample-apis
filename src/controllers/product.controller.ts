@@ -9,6 +9,7 @@ const NAMESPACE = 'product:controller'
 export class ProductController {
    private productService = new ProductService()
 
+   /** Sends product list by given optional supplier_id and limit by query params */
    public async getAllProducts(req: Request, res: Response) {
       const supplierId = Number(req.query.supplier_id)
       const limit = Number(req.query.limit) || 50
@@ -35,6 +36,7 @@ export class ProductController {
       }
    }
 
+   /** Sends single product by given id */
    public async getProductById(req: Request, res: Response) {
       const id = Number(req.params.id)
 
@@ -56,11 +58,14 @@ export class ProductController {
       }
    }
 
+   /** Insert single product with verified `supplier_id` */
    public async addProduct(req: Request, res: Response) {
       const supplier_id = Reflect.get(req, 'userId') as number
       const { name, price, sku } = req.body
 
       try {
+
+         // check for unique SKU
          const validSKU = await this.productService.verifyNewSKU(sku, supplier_id)
 
          if (!validSKU) {
@@ -88,6 +93,7 @@ export class ProductController {
       }
    }
 
+   /** Update name or price of product by specified id */
    public async updateProduct(req: Request, res: Response) {
       const supplier_id = Reflect.get(req, 'userId') as number
       const id = Number(req.params.id)
@@ -117,6 +123,7 @@ export class ProductController {
       }
    }
 
+   /** Removes product by given id */
    public async deleteProduct(req: Request, res: Response) {
       const supplier_id = Reflect.get(req, 'userId') as number
       const id = Number(req.params.id)

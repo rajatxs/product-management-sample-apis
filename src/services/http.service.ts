@@ -10,6 +10,7 @@ export class HttpService {
    private app?: Express = null
    private server?: Server = null
 
+   /** Creates app instance with default config */
    private prepare() {
       this.app = express()
       this.app.use(express.json({ limit: '5mb' }))
@@ -17,6 +18,7 @@ export class HttpService {
       this.app.use(routes);
    }
 
+   /** Starts HTTP server instance */
    public start(): Promise<void> {
       return new Promise((resolve, reject) => {
          if (this.app && this.server) {
@@ -37,6 +39,7 @@ export class HttpService {
       })
    }
 
+   /** Stops active server instance */
    public stop(): Promise<void> {
       return new Promise((resolve, reject) => {
          if (!this.app || !this.server) {

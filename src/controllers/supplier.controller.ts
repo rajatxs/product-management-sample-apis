@@ -10,6 +10,7 @@ const NAMESPACE = 'supplier:controller'
 export class SupplierController {
    private supplierService = new SupplierService()
 
+   /** Sends public details of supplier by given supplier id */
    public async getDetails(req: Request, res: Response) {
       const id = Number(req.params.id)
 
@@ -31,6 +32,7 @@ export class SupplierController {
       }
    }
 
+   /** Creates a new account of supplier */
    public async registerNewSupplier(req: Request, res: Response) {
       const { name, email, password, phone, address } = req.body
 
@@ -66,6 +68,7 @@ export class SupplierController {
       }
    }
 
+   /** Compute new auth token for supplier */
    public async generateToken(req: Request, res: Response) {
       const { email, password } = req.body
       let password_hash: string
