@@ -1,0 +1,956 @@
+{
+	"info": {
+		"_postman_id": "0fc7f7d0-a0dc-49b8-b1f0-ca4ce4ecce5f",
+		"name": "Product Management APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16575263"
+	},
+	"item": [
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "Get details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/supplier/19",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"supplier",
+								"19"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/supplier/19",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"supplier",
+										"19"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"67-Nf5i2Pv21RbrPrJ2MCdKzwTqPQA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 08:42:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": {\n        \"id\": 19,\n        \"email\": \"user5@example.com\",\n        \"name\": \"User 5\",\n        \"phone\": \"911010101010\",\n        \"address\": \"ABC\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register new account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"User 5\",\r\n    \"email\": \"user5@example.com\",\r\n    \"address\": \"ABC\",\r\n    \"phone\": \"911010101010\",\r\n    \"password\": \"Test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/supplier/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"supplier",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register new account",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"User 1\",\r\n    \"email\": \"user1@example.com\",\r\n    \"password\": \"Test1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/supplier/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"supplier",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-nr9b5jIF0vT0lbkos71fKN4JaqA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 06:14:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Supplier registered\",\n    \"result\": {\n        \"id\": 13\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Generate auth token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user5@example.com\",\r\n    \"password\": \"Test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/supplier/token",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"supplier",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Generate auth token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"user1@example.com\",\r\n    \"password\": \"Test1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/supplier/token",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"supplier",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "404"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"194-nfZVoGghXBnjKmOc7//k2631lgg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 06:13:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Auth token generated\",\n    \"result\": {\n        \"supplier\": {\n            \"id\": 1,\n            \"name\": \"User 1\",\n            \"email\": \"user1@example.com\",\n            \"password_hash\": \"$2a$10$QWe6XZe8IYe3acTjYTPfzuMa5TFwkbJpT2k4wcDLBmDFcBkdoyalu\",\n            \"phone\": null,\n            \"address\": null,\n            \"created_at\": \"2023-03-27T18:45:00.000Z\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc5OTg0MDA3LCJleHAiOjE2Nzk5ODc2MDd9.dMZ2i7E7VyqESdKt7qby2E46tTw_l8KSw74TA7a0p0s\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/products",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "860"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35c-f+xO7PB03VIQrYGW5RuFwSOAnKk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 08:57:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": [\n        {\n            \"id\": 1,\n            \"name\": \"Product 1.2\",\n            \"price\": \"20.00\",\n            \"sku\": \"PROD1\",\n            \"supplier_id\": 13,\n            \"created_at\": \"2023-03-28T07:34:52.000Z\",\n            \"updated_at\": \"2023-03-28T08:08:59.000Z\",\n            \"prices\": {\n                \"USD\": \"20.00\",\n                \"INR\": \"1644.20\",\n                \"EURO\": \"18.40\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Product 2\",\n            \"price\": \"24.00\",\n            \"sku\": \"PROD2\",\n            \"supplier_id\": 13,\n            \"created_at\": \"2023-03-28T08:08:05.000Z\",\n            \"updated_at\": \"2023-03-28T08:08:05.000Z\",\n            \"prices\": {\n                \"USD\": \"24.00\",\n                \"INR\": \"1973.04\",\n                \"EURO\": \"22.08\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Product 2\",\n            \"price\": \"24.00\",\n            \"sku\": \"PROD2\",\n            \"supplier_id\": 19,\n            \"created_at\": \"2023-03-28T08:20:34.000Z\",\n            \"updated_at\": \"2023-03-28T08:20:34.000Z\",\n            \"prices\": {\n                \"USD\": \"24.00\",\n                \"INR\": \"1973.04\",\n                \"EURO\": \"22.08\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Product 12\",\n            \"price\": \"50.00\",\n            \"sku\": \"PROD12\",\n            \"supplier_id\": 19,\n            \"created_at\": \"2023-03-28T08:21:19.000Z\",\n            \"updated_at\": \"2023-03-28T08:21:19.000Z\",\n            \"prices\": {\n                \"USD\": \"50.00\",\n                \"INR\": \"4110.50\",\n                \"EURO\": \"46.00\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get products by supplier id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/products?supplier_id=13",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "supplier_id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get products by supplier id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/products?supplier_id=13",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "supplier_id",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "436"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b4-aTezYRQl9RO5CpfGgQl6R3E2j9k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 09:08:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": [\n        {\n            \"id\": 1,\n            \"name\": \"Product 1.2\",\n            \"price\": \"20.00\",\n            \"sku\": \"PROD1\",\n            \"supplier_id\": 13,\n            \"created_at\": \"2023-03-28T07:34:52.000Z\",\n            \"updated_at\": \"2023-03-28T08:08:59.000Z\",\n            \"prices\": {\n                \"USD\": \"20.00\",\n                \"INR\": \"1644.20\",\n                \"EURO\": \"18.40\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Product 2\",\n            \"price\": \"24.00\",\n            \"sku\": \"PROD2\",\n            \"supplier_id\": 13,\n            \"created_at\": \"2023-03-28T08:08:05.000Z\",\n            \"updated_at\": \"2023-03-28T08:08:05.000Z\",\n            \"prices\": {\n                \"USD\": \"24.00\",\n                \"INR\": \"1973.04\",\n                \"EURO\": \"22.08\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get limited products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/products?limit=2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get limited products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/products?limit=2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "436"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b4-aTezYRQl9RO5CpfGgQl6R3E2j9k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 08:58:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": [\n        {\n            \"id\": 1,\n            \"name\": \"Product 1.2\",\n            \"price\": \"20.00\",\n            \"sku\": \"PROD1\",\n            \"supplier_id\": 13,\n            \"created_at\": \"2023-03-28T07:34:52.000Z\",\n            \"updated_at\": \"2023-03-28T08:08:59.000Z\",\n            \"prices\": {\n                \"USD\": \"20.00\",\n                \"INR\": \"1644.20\",\n                \"EURO\": \"18.40\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Product 2\",\n            \"price\": \"24.00\",\n            \"sku\": \"PROD2\",\n            \"supplier_id\": 13,\n            \"created_at\": \"2023-03-28T08:08:05.000Z\",\n            \"updated_at\": \"2023-03-28T08:08:05.000Z\",\n            \"prices\": {\n                \"USD\": \"24.00\",\n                \"INR\": \"1973.04\",\n                \"EURO\": \"22.08\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get single product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AUTH_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/products/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get single product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/products/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "223"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"df-1uKjZo0I3Nm57pePt499JBL4sOQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 08:59:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": {\n        \"id\": 1,\n        \"name\": \"Product 1.2\",\n        \"price\": \"20.00\",\n        \"sku\": \"PROD1\",\n        \"supplier_id\": 13,\n        \"created_at\": \"2023-03-28T07:34:52.000Z\",\n        \"updated_at\": \"2023-03-28T08:08:59.000Z\",\n        \"prices\": {\n            \"USD\": \"20.00\",\n            \"INR\": \"1644.20\",\n            \"EURO\": \"18.40\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AUTH_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Product 12\",\r\n    \"price\": 50,\r\n    \"sku\": \"PROD12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Product 2\",\r\n    \"price\": 24,\r\n    \"sku\": \"PROD2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/products",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-+DAb5ktXOGmV3L8XKEhY5/oSDSA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 08:08:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product added\",\n    \"result\": {\n        \"id\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AUTH_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Product 1.2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/products/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Product 1.2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/products/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-UeheBgioCWMk+9U/45Hv/tKU/os\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 08:08:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product has been updated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AUTH_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/products/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/products/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-3eTS6pDXZNlF1ZNrCUl9voQwerk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Mar 2023 08:09:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product has been deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/ping",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "AUTH_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksImlhdCI6MTY3OTk5MTYwMiwiZXhwIjoxNjgwMDA5NjAyfQ.268rOUeYVAUstT5XVBJfU3ucN2jkJ3x2Bqc80XlPseM",
+			"type": "string"
+		}
+	]
+}
