@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS `products`(
    id INT(8) AUTO_INCREMENT,
    name VARCHAR(50),
-   price DECIMAL(10,2),
+   price DECIMAL(10, 2),
    sku VARCHAR(46),
-   supplier_id INT,
+   supplier_id INT(8),
    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
    
